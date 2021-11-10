@@ -1,14 +1,15 @@
 <template>
-  <div id="app">
+  <v-app>
+    <notifications group="form" />
     <Form />
-  </div>
+  </v-app>
 </template>
 
 <script>
-import Form from "./components/Form.vue";
+import Form from './components/Form.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Form,
   },
