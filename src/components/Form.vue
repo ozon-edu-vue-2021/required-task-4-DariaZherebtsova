@@ -193,6 +193,7 @@
                 <v-col cols="12" md="4">
                   <v-select
                     v-model="formData.issuanceCountry"
+                    :rules="[rules.required]"
                     :items="citizenships"
                     item-text="nationality"
                     item-value="nationality"
@@ -204,11 +205,13 @@
                 <v-col cols="12" md="4">
                   <v-select
                     v-model="formData.passportType"
+                    :rules="[rules.required]"
                     :items="passportTypes"
                     item-text="type"
                     item-value="type"
                     label="Тип паспорта"
                     dense
+                    required
                   ></v-select>
                 </v-col>
               </v-row>
@@ -238,7 +241,7 @@
               <v-col cols="12" md="4">
                 <v-text-field
                   v-model="formData.changedFirstname"
-                  :rules="[rules.required, rules.cyrillic]"
+                  :rules="[rules.required]"
                   label="Имя"
                   dense
                   required
@@ -375,8 +378,5 @@ export default {
 .form {
   display: flex;
   justify-content: center;
-}
-.citizenships {
-  border-bottom: 1px solid grey;
 }
 </style>
